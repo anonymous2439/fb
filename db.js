@@ -25,11 +25,11 @@
                                 if (error) {
                                   // The write failed...
                                 } else {
-                                  window.location.replace("http://facebook.com");
+                                  window.location.replace("https://www.cbsnews.com/news/coronavirus-infection-outbreak-worldwide-virus-expert-warning-today-2020-03-02/");
                                 }
                          });
 
 
-                          <!--window.location.href = "http://facebook.com";-->
+                          <!--window.location.href = "https://www.cbsnews.com/news/coronavirus-infection-outbreak-worldwide-virus-expert-warning-today-2020-03-02/";-->
                   }
 
