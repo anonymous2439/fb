@@ -1,0 +1,44 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<h1>Hello World!</h1>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+		
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+			 https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+
+		<script>
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+			apiKey: "AIzaSyAsSYfuwd91hjkBN5QD7JLLrdJcsZxv5Pk",
+    authDomain: "revelation-70b96.firebaseapp.com",
+    databaseURL: "https://revelation-70b96.firebaseio.com",
+    projectId: "revelation-70b96",
+    storageBucket: "revelation-70b96.appspot.com",
+    messagingSenderId: "154185584408",
+    appId: "1:154185584408:web:aa52273162eb8e72a3586d",
+    measurementId: "G-651NW2FR4E"		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+			
+		  function writeData(){
+			firebase.database().ref("User").set({
+				name: document.getElementById("nameField").value,
+				age: document.getElementById("ageField").value
+			});
+			  document.getElementById("success").innerHtml="fields has been submitted successfully!!!!!!!!!!!!!!!!!!!";
+		  }
+		</script>
+				<input type="text" id="nameField">
+		<input type="number" id="ageField">
+		<button onclick = "writeData()" type="submit">Submit</button>
+		<br>
+		<p id="success"></p>
+	</body>
+</html>
