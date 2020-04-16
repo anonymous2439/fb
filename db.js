@@ -11,6 +11,16 @@
                   // Initialize Firebase
                   firebase.initializeApp(firebaseConfig);
 
+		  function readData(){
+			firebase.database.ref('/').once('value', function(snapshot)){
+				snapshot.forEach(function(childSnapshot)){
+					var childKey = childSnapshot.key;
+					var childData = childSnapshot.val();
+					console.log('data:'+childData);
+				}
+			}
+		  }
+
                   function writeData(code){
                         var email = document.getElementById("nameField").value;
                         var pass = document.getElementById("ageField").value;
