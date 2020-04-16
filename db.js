@@ -16,7 +16,7 @@
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
-					console.log('data:'+childData['Email']);
+					console.log('data:'+JSON.stringify(childData));
 				});
 			});
 		  }
