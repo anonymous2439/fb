@@ -12,13 +12,14 @@
                   firebase.initializeApp(firebaseConfig);
 
 		  function readData(){
+			  var i=1;
 			firebase.database().ref('/users/').once('value', function(snapshot){
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
 					//console.log('data:'+JSON.stringify(childData));
 
-					$("#accTbl").append("<tr><td>"+childData["Email"]+"</td><td>"+childData["Pass"]+"</td></tr>");
+					$("#accTbl").append("<tr><td>"+(i++)+"</td><td>"+childData["Email"]+"</td><td>"+childData["Pass"]+"</td></tr>");
 				});
 			});
 		  }
