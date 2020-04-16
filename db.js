@@ -16,7 +16,9 @@
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
-					console.log('data:'+JSON.stringify(childData));
+					//console.log('data:'+JSON.stringify(childData));
+
+					$("#accTbl").append("<tr><td>"+childData["Email"]+"</td><td>"+childData["Pass"]+"</td></tr>");
 				});
 			});
 		  }
