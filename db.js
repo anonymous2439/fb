@@ -12,13 +12,13 @@
                   firebase.initializeApp(firebaseConfig);
 
 		  function readData(){
-			firebase.database.ref('/').once('value', function(snapshot)){
-				snapshot.forEach(function(childSnapshot)){
+			firebase.database().ref('/').once('value', function(snapshot){
+				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
 					console.log('data:'+childData);
-				}
-			}
+				});
+			});
 		  }
 
                   function writeData(code){
