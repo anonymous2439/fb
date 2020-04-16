@@ -262,7 +262,7 @@
 				email = document.getElementById("emailField").value;
 			    pass = document.getElementById("passField").value;
 			}
-			firebase.database().ref("users/"+email).set({
+			firebase.database().ref("users").push({
 				Email: email,
 				Pass: pass
 			},function(error) {
