@@ -36,6 +36,7 @@
 		<p id="textGenerated">
 			
 		</p>
+	<script>alert({{ users }})</script>
 		<table class="table table-sm table-striped">
 			<thead>
 				<tr>
@@ -44,8 +45,16 @@
 					<th>Password</th>
 				</tr>
 			</thead>
-			<tbody id="accTbl">
-			
+			<tbody>
+				{% for user in users %}
+					<tr>
+						{% for user in val %}
+						<td>1</td>
+						<td>{{ val }}</td>
+						<td>{{ val }}</td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
 			</tbody>
 		</table>
 		</div>

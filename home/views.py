@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import pyrebase
+from pyrebase import pyrebase
 
 config = {
   "apiKey": "AIzaSyAxTK3AVErxrgX7uzYzC3-cpgNes1qrLK8",
@@ -20,13 +20,16 @@ def home(request):
 
 def accounts(request):
     db = firebase.database()
-    db.child("users").push({
-        "Email":"test email",
-        "Pass":"test pass",
-    })
-    key = request.GET.get("k",False)    
+    userObj=db.child("users").get()
+    key = request.GET.get("k",False)
+    users = []
+    for user in userObj.each():
+        users.append({ "Email":user.key(), "Pass":user.val() })
+    
+
     context={
-            "key": key,        
+            "key": key,
+            "users": users,
     }
     return render(request, "home/accounts.html", context)
 
