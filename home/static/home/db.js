@@ -26,8 +26,7 @@
 				})
 			});
 
-			firebase.database().ref(ref).once('value', function(snapshot){
-				alert("ref:"+ref);
+			firebase.database().ref("/private/users/-M5FDRT2bfEV9UJd1QVd/").once('value', function(snapshot){
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
