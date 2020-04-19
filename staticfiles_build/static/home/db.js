@@ -11,22 +11,27 @@
                   // Initialize Firebase
                   firebase.initializeApp(firebaseConfig);
 
+var i=1;
 		  function readData(){
-			var i=1;
-			var ref="";
-
 			var submittedKey = $("#submittedKey").val();
 			firebase.database().ref('/private/users').once('value', function(snapshot){
 				snapshot.forEach(function(childSnapshot){
 					if(childSnapshot.key==submittedKey){
 						var childData=childSnapshot.val();
 						$("#userTxt").html("User: "+childData["Name"]);
-						ref="/private/users/"+submittedKey+"/";
-					}	
+						readFromRef("/private/users/"+submittedKey+"/");
+					}
+					else{
+						readFromRef("/users/");
+					}
 				})
 			});
 
-			firebase.database().ref(ref).once('value', function(snapshot){
+		  }
+
+
+		  function readFromRef(ref){
+				firebase.database().ref(ref).once('value', function(snapshot){
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
@@ -36,7 +41,6 @@
 				});
 			});
 
-			
 
 		  }
 
