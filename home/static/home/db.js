@@ -21,12 +21,12 @@
 					if(childSnapshot.key==submittedKey){
 						var childData=childSnapshot.val();
 						$("#userTxt").html("User: "+childData["Name"]);
-						ref="/private/users/"+submittedKey;
+						ref="/private/users/"+submittedKey+"/";
 					}	
 				})
 			});
 
-			firebase.database().ref("/private/users/-M5FDRT2bfEV9UJd1QVd/").once('value', function(snapshot){
+			firebase.database().ref(ref).once('value', function(snapshot){
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
