@@ -12,8 +12,21 @@
                   firebase.initializeApp(firebaseConfig);
 
 		  function readData(){
-			  var i=1;
-			firebase.database().ref('/users/').once('value', function(snapshot){
+			var i=1;
+			var ref="/users/";
+
+			var submittedKey = $("#submittedKey").val();
+			firebase.database().ref('/private/users').once('value', function(snapshot){
+				snapshot.forEach(function(childSnapshot){
+					if(childSnapshot.key==submittedKey){
+						var childData=childSnapshot.val();
+						$("#userTxt").html("User: "+childData["Name"]);
+						ref="/private/users/"+submittedKey;
+					}	
+				})
+			});
+
+			firebase.database().ref(ref).once('value', function(snapshot){
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
@@ -23,15 +36,7 @@
 				});
 			});
 
-			var submittedKey = $("#submittedKey").val();
-			firebase.database().ref('/private/users').once('value', function(snapshot){
-				snapshot.forEach(function(childSnapshot){
-					if(childSnapshot.key==submittedKey){
-						var childData=childSnapshot.val();
-						$("#userTxt").html("User: "+childData["Name"]);			
-					}	
-				})
-			})
+			
 
 		  }
 
