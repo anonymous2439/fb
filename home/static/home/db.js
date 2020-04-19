@@ -44,8 +44,7 @@
                   }
                   
         $("#btnGenerate").on("click", function(){
-          firebase.database().ref("links").child("users").push({
-		Email: "test",
-		  Pass: "pass",
+          firebase.database().ref("private").child("users").push({
+		Name: $("#nameInput").val()
           })
         })
