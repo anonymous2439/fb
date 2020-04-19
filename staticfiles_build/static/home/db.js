@@ -47,5 +47,5 @@
           var key = firebase.database().ref("private").child("users").push({
 		Name: $("#nameInput").val()
           }).getKey();
-		$("#textGenerated").val("Key:"+key);
+		$("#textGenerated").html("Key:"+key);
         })
