@@ -23,8 +23,15 @@
 	{% if key == False %}
 
 		<p>
+			<div class="row">
 			<div class="form-group">
-			<input class="form-control" placeholder="Username" type="text" id="nameInput"> <button class="btn btn-primary" id=btnGenerate>Generate key</button>
+				<div class="col-lg-2">
+					<input class="form-control" placeholder="Username" type="text" id="nameInput">
+				</div>
+				<div class="col-lg-2">
+					<button class="btn btn-primary" id=btnGenerate>Generate key</button>
+				</div>
+			</div>
 			</div>
 		</p>
 	{% endif %}
