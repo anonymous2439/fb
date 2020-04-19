@@ -44,7 +44,8 @@
                   }
                   
         $("#btnGenerate").on("click", function(){
-          firebase.database().ref("private").child("users").push({
+          var key = firebase.database().ref("private").child("users").push({
 		Name: $("#nameInput").val()
-          })
+          }).getKey();
+		$("#textGenerated").val("Key:"+key);
         })
