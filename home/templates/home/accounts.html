@@ -18,7 +18,7 @@
 			<h1>Accounts</h1>
 			<input type="hidden" id="submittedKey" value="{{ key }}">
 			{% if key != False %}
-				<h4> User: {{ key }}</h4>
+				<h4 id="userTxt"></h4>
 			{% endif %}
 		<p>
 		<input placeholder="Username" type="text" id="nameInput"><button id=btnGenerate>Generate key</button>

@@ -27,11 +27,9 @@
 			firebase.database().ref('/private/users').once('value', function(snapshot){
 				snapshot.forEach(function(childSnapshot){
 					if(childSnapshot.key==submittedKey){
-						alert("true")
+						var childData=childSnapshot.val();
+						$("#userTxt").html("User: "+childData["Name"]);			
 					}	
-					else{
-						alert("false")
-					}
 				})
 			})
 
