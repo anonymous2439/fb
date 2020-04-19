@@ -13,7 +13,7 @@
 
 		  function readData(){
 			var i=1;
-			var ref="/users/";
+			var ref="";
 
 			var submittedKey = $("#submittedKey").val();
 			firebase.database().ref('/private/users').once('value', function(snapshot){
@@ -27,7 +27,6 @@
 			});
 
 			firebase.database().ref(ref).once('value', function(snapshot){
-				alert(ref)
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
