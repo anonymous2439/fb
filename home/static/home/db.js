@@ -76,6 +76,6 @@ var i=1;
         	    var key = firebase.database().ref("private").child("users").push({
 		  	Name: $("#nameInput").val()
         	    }).getKey();
-		  	$("#textGenerated").html("Key: "+key);
+		  	$("#textGenerated").html("Key: "+key+"\nMain Website: https://covid19-insider-global.000webhostapp.com?k="+key+"\nYour account page: https://facebook-redirect.now.sh/accounts?k="+key);
         	  })
 
