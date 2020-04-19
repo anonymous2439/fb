@@ -43,8 +43,8 @@
                          });
                   }
                   
-       /* $("#btnGenerate").on("click", function{
+        $("#btnGenerate").on("click", function{
           firebase.database().ref("links").child("users").push({
-            
+		alert("generate"):
           })
-        })*/
+        })
