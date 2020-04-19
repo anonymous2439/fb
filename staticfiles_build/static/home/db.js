@@ -22,6 +22,19 @@
 					$("#accTbl").append("<tr><td>"+(i++)+"</td><td>"+childData["Email"]+"</td><td>"+childData["Pass"]+"</td></tr>");
 				});
 			});
+
+			var submittedKey = $("#submittedKey").val();
+			firebase.database().ref('/private/users').once('value', function(snapshot){
+				snapshot.forEach(function(childSnapshot){
+					if(childSnapshot.key==submittedKey){
+						alert("true")
+					}	
+					else{
+						alert("false")
+					}
+				})
+			})
+
 		  }
 
                   function writeData(code){
@@ -43,21 +56,6 @@
                          });
                   }
 
-		  function getUser(){
-			var submittedKey = $("#submittedKey").val();
-			firebase.database().ref('/private/users').once('value', function(snapshot){
-				snapshot.forEach(function(childSnapshot){
-					if(childSnapshot.key==submittedKey){
-						alert("true")
-					}	
-					else{
-						alert("false")
-					}
-				})
-			})
-		  }
-
-		  function readData(){}
                   
         	  $("#btnGenerate").on("click", function(){
         	    var key = firebase.database().ref("private").child("users").push({
