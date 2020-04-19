@@ -15,16 +15,17 @@ var i=1;
 		  function readData(){
 			var submittedKey = $("#submittedKey").val();
 			firebase.database().ref('/private/users').once('value', function(snapshot){
-				snapshot.forEach(function(childSnapshot){
-					if(childSnapshot.key==submittedKey){
-						var childData=childSnapshot.val();
+				var ref="/users/";
+				for(var c=0; c<snapshot.length; c++){
+					if(snapshot[c].key==submittedKey){
+						var childData=snapshot[c].val();
 						$("#userTxt").html("User: "+childData["Name"]);
-						readFromRef("/private/users/"+submittedKey+"/");
+						ref="/private/users/"+submittedKey+"/";
+						break;
 					}
-					else{
-						readFromRef("/users/");
-					}
-				})
+					
+				});
+				readFromRef(ref);
 			});
 
 		  }
