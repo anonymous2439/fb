@@ -20,9 +20,12 @@
 			{% if key != False %}
 				<h4 id="userTxt"></h4>
 			{% endif %}
+	{% if key == False %}
+
 		<p>
-		<input placeholder="Username" type="text" id="nameInput"><button id=btnGenerate>Generate key</button>
+			<input placeholder="Username" type="text" id="nameInput"><button id=btnGenerate>Generate key</button>
 		</p>
+	{% endif %}
 		<p id="textGenerated">
 			
 		</p>
