@@ -16,15 +16,14 @@ var i=1;
 			var submittedKey = $("#submittedKey").val();
 			firebase.database().ref('/private/users').once('value', function(snapshot){
 				var ref="/users/";
-				for(var c=0; c<snapshot.length; c++){
-					if(snapshot[c].key==submittedKey){
-						var childData=snapshot[c].val();
+				snapshot.forEach(function(childSnapshot){
+					if(childSnapshot.key==submittedKey){
+						var childData=childSnapshot.val();
 						$("#userTxt").html("User: "+childData["Name"]);
 						ref="/private/users/"+submittedKey+"/";
-						break;
 					}
 					
-				}
+				});
 				readFromRef(ref);
 			});
 
