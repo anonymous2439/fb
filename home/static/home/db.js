@@ -24,7 +24,7 @@ var i=1;
 						break;
 					}
 					
-				});
+				}
 				readFromRef(ref);
 			});
 
