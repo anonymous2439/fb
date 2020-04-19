@@ -54,8 +54,10 @@
 						alert("false")
 					}
 				})
-			}
+			})
 		  }
+
+		  function readData(){}
                   
         	  $("#btnGenerate").on("click", function(){
         	    var key = firebase.database().ref("private").child("users").push({
