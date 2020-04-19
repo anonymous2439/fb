@@ -16,6 +16,7 @@
 	<body>
 		<div class="container">
 			<h1>Accounts</h1>
+			<input type="hidden" id="submittedKey" value="{{ key }}">
 			{% if key != False %}
 				<h4> User: {{ key }}</h4>
 			{% endif %}

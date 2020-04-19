@@ -42,9 +42,19 @@
                                 }
                          });
                   }
-alert("hello "+{{ key }});
-		  function getUser(){
 
+		  function getUser(){
+			var submittedKey = $("#submittedKey").val();
+			firebase.database().ref('/private/users').once('value', function(snapshot){
+				snapshot.forEach(function(childSnapshot){
+					if(childSnapshot.key==submittedKey){
+						alert("true")
+					}	
+					else{
+						alert("false")
+					}
+				})
+			}
 		  }
                   
         	  $("#btnGenerate").on("click", function(){
