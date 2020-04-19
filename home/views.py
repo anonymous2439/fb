@@ -5,8 +5,9 @@ def home(response):
     return render(response, "home/index.html")
 
 def accounts(request):
+    key = request.GET.get("k",False)    
     context={
-        "key":request.GET["k"],        
+            "key": key,        
     }
     return render(request, "home/accounts.html", context)
 
