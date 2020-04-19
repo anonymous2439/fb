@@ -24,6 +24,7 @@ def accounts(request):
         "Email":"test email",
         "Pass":"test pass",
     })
+
     key = request.GET.get("k",False)    
     context={
             "key": key,        
