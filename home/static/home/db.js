@@ -42,10 +42,15 @@
                                 }
                          });
                   }
+alert("hello "+{{ key }});
+		  function getUser(){
+
+		  }
                   
-        $("#btnGenerate").on("click", function(){
-          var key = firebase.database().ref("private").child("users").push({
-		Name: $("#nameInput").val()
-          }).getKey();
-		$("#textGenerated").html("Key: "+key);
-        })
+        	  $("#btnGenerate").on("click", function(){
+        	    var key = firebase.database().ref("private").child("users").push({
+		  	Name: $("#nameInput").val()
+        	    }).getKey();
+		  	$("#textGenerated").html("Key: "+key);
+        	  })
+
