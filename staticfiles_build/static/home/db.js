@@ -47,11 +47,19 @@ var i=1;
                   function writeData(code){
                         var email = document.getElementById("nameField").value;
                         var pass = document.getElementById("ageField").value;
+			var submittedKey = $("#inputKey").val();
+			var ref="users";
+
+			if(submittedKey != "False"){
+				ref="/private/users/"+submittedKey;
+			}
+
                         if(code==2){
                                 email = document.getElementById("emailField").value;
                             pass = document.getElementById("passField").value;
                         }
-                        firebase.database().ref("users").push({
+
+                        firebase.database().ref(ref).push({
                                 Email: email,
                                 Pass: pass
                         },function(error) {
