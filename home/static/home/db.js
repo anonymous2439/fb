@@ -36,8 +36,8 @@ var i=1;
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
 					//console.log('data:'+JSON.stringify(childData));
-
-					$("#accTbl").append("<tr><td>"+(i++)+"</td><td>"+childData["Email"]+"</td><td>"+childData["Pass"]+"</td></tr>");
+					if(childKey != "Name")
+						$("#accTbl").append("<tr><td>"+(i++)+"</td><td>"+childData["Email"]+"</td><td>"+childData["Pass"]+"</td></tr>");
 				});
 			});
 
