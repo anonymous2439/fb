@@ -27,6 +27,7 @@
 			});
 
 			firebase.database().ref(ref).once('value', function(snapshot){
+				alert(ref)
 				snapshot.forEach(function(childSnapshot){
 					var childKey = childSnapshot.key;
 					var childData = childSnapshot.val();
