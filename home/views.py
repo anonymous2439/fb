@@ -24,10 +24,10 @@ def accounts(request):
     key = request.GET.get("k",False)
 
     if key != False:
-        try:
-          userObj=db.child("private").child("users").child(key).get()
-        except:
+        userObj=db.child("private").child("users").child(key).get()
+        if userObj == None:
           key=False
+          userObj=db.child("users").get()
           print('key not found')
 
     users = []
