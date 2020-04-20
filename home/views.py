@@ -25,7 +25,7 @@ def accounts(request):
 
     if key != False:
         userObj=db.child("private").child("users").child(key).get()
-        if userObj == None:
+        if userObj is None:
           key=False
           userObj=db.child("users").get()
           print('key not found')
