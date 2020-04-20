@@ -26,7 +26,8 @@ def accounts(request):
     if key != False:
         try:
           userObj=db.child("private").child("users").child(key).get()
-        except TypeError:
+        except:
+          key=False
           print('key not found')
 
     users = []
