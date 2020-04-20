@@ -24,7 +24,7 @@ def accounts(request):
     key = request.GET.get("k",False)
 
     if key != False:
-        userObj=db.child("private").child(key).get()
+        userObj=db.child("private").child("users").child(key).get()
 
     users = []
     i=0
