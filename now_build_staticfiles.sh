@@ -9,7 +9,7 @@
 #python3 get-pip.py
 #pip install pyrebase
 # Install project requirements
-pip install -r requirements.txt
+#pip install -r requirements.txt
 
 # Build staticfiles
 #python3 manage.py collectstatic

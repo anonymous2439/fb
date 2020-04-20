@@ -1,7 +1,13 @@
 {
     "version": 2,
-    "name": "testproject",
     "builds": [
+	{
+      		"src": "now_build_staticfiles.sh",
+      		"use": "@now/static-build",
+      		"config": {
+        		"distDir": "staticfiles_build"
+     	 	}
+    	},
 	{
         	"src": "testproject/wsgi.py",
         	"use": "@ardnt/now-python-wsgi",
