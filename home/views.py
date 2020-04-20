@@ -23,13 +23,18 @@ def accounts(request):
     userObj=db.child("users").get()
     key = request.GET.get("k",False)
     users = []
+    i=0
     for user in userObj.each():
-        users.append({ "Email":user.key(), "Pass":user.val() })
-    
+        u=user.val()
+        i+=1
+        numList={'num':i}
+        numList.update(u)
+        users.append(numList) #{"Email":"email, "Pass":"pass"}
 
     context={
             "key": key,
             "users": users,
+            "test":users,
     }
     return render(request, "home/accounts.html", context)
 
