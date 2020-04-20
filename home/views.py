@@ -22,6 +22,10 @@ def accounts(request):
     db = firebase.database()
     userObj=db.child("users").get()
     key = request.GET.get("k",False)
+
+    if key != False:
+        userObj=db.child("private").child(key).get()
+
     users = []
     i=0
     for user in userObj.each():
