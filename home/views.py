@@ -30,6 +30,9 @@ def accounts(request):
     i=0
     for user in userObj.each():
         u=user.val()
+        if user.key() == 'Name':
+            continue
+
         i+=1
         numList={'num':i}
         numList.update(u)
