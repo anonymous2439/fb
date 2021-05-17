@@ -25,7 +25,7 @@ SECRET_KEY = '*qe&$or&qcf==^p7k2c+9!$7&f0upk3z!52$u6$-x1q7=cbit&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".now.sh"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
